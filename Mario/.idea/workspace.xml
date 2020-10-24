@@ -20,13 +20,14 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:DV_10" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:Sl_10" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee599e79-68f7-4229-a529-a21449ade77b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Source.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Mario.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Mario.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +80,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="DV_10" />
+                        <option value="Sl_10" />
                       </list>
                     </value>
                   </entry>
