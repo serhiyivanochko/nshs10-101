@@ -11,19 +11,28 @@ player_y2 = 550
 player_x1 = 500
 player_x2 = 550
 player = canvas.create_rectangle(player_x1, player_y1, player_x2, player_y2, fill="red")
-block_x = 500
-block_y = 470
-block = canvas.create_rectangle(block_x,block_y,block_x+50,block_y-50,fill="green")
+block_x1 = 500
+block_x2 = 550
+block_y1 = 470
+block_y2 = 420
+block = canvas.create_rectangle(block_x1, block_y1, block_x2, block_y2, fill="green")
+
 
 def create_block():
-    global block_x
-    global player_x
-    if block_y >= player_y1:
-        if block_x >= player_x1 and block_x + 50 <= player_x +50:
-            create_coin()
-
+    global coin
+    global block_x1
+    global block_x2
+    global block_y1
+    global block_y2
+    global player_x1
+    global player_x2
+    global player_y1
+    global player_y2
+    if block_y1 >= player_y1 and block_y2 <= player_y2 and block_x1 <= player_x2 and block_x2 >= player_x1:
+        create_coin()
 
 def create_coin():
+    global coin
     coin = canvas.create_oval(500, 420, 550, 370, fill="yellow")
 def leftKey(event):
     global player_x1
@@ -32,7 +41,8 @@ def leftKey(event):
     global player_y2
     player_x1 = player_x1 - 10
     player_x2 = player_x2 - 10
-    canvas.coords(player,player_x1,player_y1, player_x1, player_y2)
+    canvas.coords(player,player_x1,player_y1, player_x2, player_y2)
+    create_block()
 def rightKey(event):
     global player_y1
     global player_y2
@@ -40,13 +50,33 @@ def rightKey(event):
     global player_x2
     player_x1 = player_x1 + 10
     player_x2 = player_x2 + 10
-    canvas.coords(player, player_x1, player_y1, player_x1, player_y2)
-
+    canvas.coords(player, player_x1, player_y1, player_x2, player_y2)
+    create_block()
+def upKey(event):
+    global player_y1
+    global player_y2
+    global player_x1
+    global player_x2
+    player_y1 = player_y1 - 10
+    player_y2 = player_y2 - 10
+    canvas.coords(player, player_x1, player_y1, player_x2, player_y2)
+    create_block()
+def downKey(event):
+    global player_y1
+    global player_y2
+    global player_x1
+    global player_x2
+    player_y1 = player_y1 + 10
+    player_y2 = player_y2 + 10
+    canvas.coords(player, player_x1, player_y1, player_x2, player_y2)
+    create_block()
 
 win.bind('<Left>', leftKey)
 win.bind('<Right>', rightKey)
-win.bind('<Up>',)
+win.bind('<Up>', upKey)
+win.bind('<Down>', downKey)
 
+win.mainloop()
 '''from tkinter import *
 
 root = Tk()
