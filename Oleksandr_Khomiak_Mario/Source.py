@@ -7,9 +7,9 @@ canvas.pack()
 player = canvas.create_rectangle(500, 500, 550, 550, fill="red")
 
 player_y1 = 500
-player_y2 = player_y1 + 50
+player_y2 = 550
 player_x1 = 500
-player_x2 = player_x1 + 50
+player_x2 = 550
 player = canvas.create_rectangle(player_x1, player_y1, player_x2, player_y2, fill="red")
 block_x = 500
 block_y = 470
@@ -26,31 +26,26 @@ def create_block():
 def create_coin():
     coin = canvas.create_oval(500, 420, 550, 370, fill="yellow")
 def leftKey(event):
-    
     global player_x1
     global player_x2
     global player_y1
     global player_y2
-    player_x1 = player_x1 - 50
-    player_x2 = player_x2 - 50
-    player_y1 = player_y1 - 50
-    player_y2 = player_y2 - 50
+    player_x1 = player_x1 - 10
+    player_x2 = player_x2 - 10
+    canvas.coords(player,player_x1,player_y1, player_x1, player_y2)
 def rightKey(event):
-
     global player_y1
     global player_y2
     global player_x1
     global player_x2
-    player_x1 = player_x1 + 50
-    player_x2 = player_x2 + 50
-    player_y1 = player_y1 + 50
-    player_y2 = player_y2 + 50
+    player_x1 = player_x1 + 10
+    player_x2 = player_x2 + 10
+    canvas.coords(player, player_x1, player_y1, player_x1, player_y2)
 
 
 win.bind('<Left>', leftKey)
 win.bind('<Right>', rightKey)
-
-win.mainloop()
+win.bind('<Up>',)
 
 '''from tkinter import *
 
